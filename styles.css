@@ -48,7 +48,7 @@ body {
     font-weight: 500;
     transition: color 0.3s;
  }
- nav-links a:hover {
+ .nav-links a:hover {
     color: var(--accent);
 
  }
@@ -60,8 +60,8 @@ body {
 }
 .hero-section h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
 }
+
 .skills-grid{
    display: grid;
    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
@@ -113,3 +113,188 @@ body {
    flex-direction: column;
 }
 
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.btn-primary{
+    background: var(--accent);
+    color: var(--white);
+}
+.btn-primary:hover{
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.btn-secondary{
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+.btn-secondary:hover{
+    background: var(--white);
+    color: var(--primary);
+}
+
+/* --About Section-- */
+.about-content{
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    gap:50px;
+    max-width: 1000px;
+    /*margin: 0 auto;*/
+}
+/* .profile-figure{
+    flex: 1;
+    text-align: center;
+} */
+/* Make the profile picture look professional */
+.profile-figure img{
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1/1; /* Maintain square aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 50%; /* Circular profile picture */
+    border: 5px solid var(--primary);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+.profile-figure img:hover{
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+.profile-figure figcaption{
+    margin-top: 15px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--primary);
+}
+.about-text{
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+/* === SECTION STYLES === */
+section{
+    padding: 80px 5%;
+}
+section h2{
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+ 
+section h2::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+/* === ANIMATIONS === */
+@keyframes fadeInUp{
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.hero-section h1{
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+.tagline{
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+.hero-buttons{
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+ 
+/* === CONTACT FORM === */
+.contact-section{
+    background: var(--light);
+}
+ 
+.form-group{
+    margin-bottom: 24px;
+}
+ 
+.form-group label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+ 
+.form-group input,
+.form-group textarea,
+.form-select{
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #DDD;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group .form-select:focus{
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(27, 79, 114, 0.2);
+}
+ 
+/* === FOOTER === */
+.site-footer{
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 40px 5%;
+}
+ 
+/* === RESPONSIVE === */
+@media (max-width: 768px){
+    .nav-links{ display: none;}
+    .menu-toggle {display: block;}
+    .hero-section h1 {font-size: 2rem;}
+    .projects-grid {grid-template-columns: 1fr;}
+}
+ 
+/* CSS ADDED FOR MENU TOGGLE */
+/* === MOBILE NAVIGATION ==== */
+.menu-toggle{
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+ 
+}
+@media (max-width:768px){
+    .menu-toggle{
+        display:block;
+    }
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#1B4F72;
+        flex-direction:column;
+        text-align:center;
+        padding:20px 0;
+        gap:20px;
+    }
+.nav-links.open{
+        display:flex;
+ 
+    }
+}
