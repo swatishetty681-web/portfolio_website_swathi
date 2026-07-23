@@ -1,9 +1,20 @@
 /* styles.css - Start styling your portfolio website here */
-/* ----RESET & BASE---- */
+/* ===RESET & BASE=== */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+.site-header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--primary);
+    transition: background 0.3s ease, box-shadow 0.3s ease; /Day 9/
 }
 
 /* CSS Custom Properties (variables)- DRY Principle */
@@ -21,6 +32,7 @@ body {
     line-height: 1.6;
     background-color: var(--white);
  }
+ 
  /* NAVIGATION */
  .navbar{
     display: flex;
@@ -50,18 +62,27 @@ body {
  }
  .nav-links a:hover {
     color: var(--accent);
-
  }
+ .nav-links a.active{
+    color: var(--accent);
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent);
+}
+
+ /* HERO SECTION */
 .hero-section {
     text-align: center;
     padding: 100px 5%;
     background: linear-gradient(135deg, var(--primary),#2E86AB);
     color: var(--white);
+    padding: 100px 5%;
 }
 .hero-section h1 {
     font-size: 3rem;
+    margin-bottom: 20px;
 }
 
+/* SKILLS SECTION */
 .skills-grid{
    display: grid;
    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
@@ -79,9 +100,11 @@ body {
    transition: transform 0.3s, box-shadow 0.3s;
 }
 .skill-item:hover{
-   transform: translateY(-10px);
-   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
+
+/* PROJECTS SECTION */
 .projects-grid{
    display: grid;
    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
@@ -144,7 +167,7 @@ body {
     color: var(--primary);
 }
 
-/* --About Section-- */
+/* ===About Section=== */
 .about-content{
     /* display: flex; */
     align-items: center;
@@ -299,3 +322,7 @@ section h2::after{
  
     }
 }
+.site-header.scrolled{
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+ 
